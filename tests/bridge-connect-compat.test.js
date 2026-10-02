@@ -29,6 +29,23 @@ describe('bridge connect compatibility', function () {
     env.extendedSettings.connect.shareRegion.should.equal('ous');
   });
 
+  it('maps the US bridge server to the us share region', function () {
+    var env = {
+      extendedSettings: {
+        bridge: {
+          userName: 'dexcom-user',
+          password: 'dexcom-pass',
+          server: 'US'
+        }
+      }
+    };
+
+    compat.applyBridgeToConnectCompatibility(env);
+
+    env.extendedSettings.connect.shareRegion.should.equal('us');
+    should.not.exist(env.extendedSettings.connect.shareServer);
+  });
+
   it('preserves explicit connect settings over bridge settings', function () {
     var env = {
       extendedSettings: {
