@@ -1,0 +1,313 @@
+/*
+ * Modern UI layer. Loaded after main.css / drawer.css / dropdown.css and only
+ * overrides visual styling (type, color, radius, spacing) -- not layout that
+ * the client JS depends on (drawer positioning, chart sizing).
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --ns-bg: #2b2f36;
+  --ns-surface: #343a42;
+  --ns-surface-2: #3d444d;
+  --ns-surface-sunken: #1f2329;
+  --ns-border: rgba(255, 255, 255, 0.08);
+  --ns-border-strong: rgba(255, 255, 255, 0.16);
+  --ns-text: #e4e7eb;
+  --ns-text-muted: #9aa3ad;
+  --ns-accent: #4fc3f7;
+  --ns-accent-strong: #1e6fd9;
+  --ns-radius: 12px;
+  --ns-radius-sm: 8px;
+  --ns-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --ns-font: 'Inter', 'Ubuntu', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+body {
+  font-family: var(--ns-font);
+  background: var(--ns-bg);
+  color: var(--ns-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.primary {
+  font-family: var(--ns-font);
+}
+
+a, a:visited, a:link {
+  color: var(--ns-accent);
+}
+
+/* ---------- Toolbar ---------- */
+
+#toolbar {
+  text-shadow: none;
+  background: url("../images/logo2.png") no-repeat 8px center var(--ns-surface-sunken);
+  background-size: 26px;
+  border-bottom: 1px solid var(--ns-border);
+  padding-left: 44px;
+}
+
+#toolbar .customTitle {
+  color: var(--ns-text);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-shadow: none;
+}
+
+#buttonbar {
+  opacity: 1;
+}
+
+#buttonbar a,
+#buttonbar i {
+  color: var(--ns-text-muted);
+  transition: color 0.15s ease;
+}
+
+#buttonbar a:hover i {
+  color: var(--ns-text);
+}
+
+#buttonbar .selected,
+#buttonbar .selected i {
+  color: var(--ns-accent);
+}
+
+#toolbar .button-close {
+  color: var(--ns-text);
+  background: var(--ns-surface-2);
+  border: 1px solid var(--ns-border-strong);
+  border-radius: var(--ns-radius-sm);
+}
+
+h1, legend,
+#toolbar .customTitle,
+#about .appName,
+#about .version {
+  text-shadow: none;
+}
+
+/* ---------- Current BG readout ---------- */
+
+.bgButton {
+  background: var(--ns-surface);
+  border: 1px solid var(--ns-border);
+  border-radius: var(--ns-radius);
+  box-shadow: var(--ns-shadow);
+}
+
+.bgStatus .currentBG {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.alarming .bgButton {
+  border-color: transparent;
+  box-shadow: var(--ns-shadow);
+}
+
+.alarming .bgButton:active {
+  border: 1px solid transparent;
+}
+
+/* ---------- Pills ---------- */
+
+.pill {
+  border: 1px solid var(--ns-border-strong);
+  background: var(--ns-surface-2);
+  border-radius: var(--ns-radius-sm);
+  overflow: hidden;
+}
+
+.pill em {
+  background: var(--ns-surface-sunken);
+  border-radius: 0;
+  font-weight: 600;
+}
+
+.pill label {
+  color: var(--ns-text-muted);
+  font-weight: 500;
+}
+
+.pill.rawbg {
+  border-color: var(--ns-border-strong);
+}
+
+.pill.rawbg em {
+  background-color: var(--ns-surface-sunken);
+}
+
+/* ---------- Time range selector ---------- */
+
+.focus-range li {
+  border: 1px solid transparent;
+  border-radius: var(--ns-radius-sm);
+  color: var(--ns-text-muted);
+  padding: 0 4px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.focus-range li:hover {
+  color: var(--ns-text);
+}
+
+.focus-range .selected {
+  border-color: transparent;
+  background: var(--ns-accent-strong);
+  color: #fff;
+}
+
+/* ---------- Chart ---------- */
+
+#chartContainer {
+  background: var(--ns-surface);
+  border: 1px solid var(--ns-border);
+  border-radius: var(--ns-radius);
+  margin: 2px 8px;
+}
+
+/* ---------- Menus, buttons, tooltips ---------- */
+
+#silenceBtn, #viewMenu {
+  border: 1px solid var(--ns-border-strong);
+  border-radius: var(--ns-radius-sm);
+  overflow: hidden;
+  box-shadow: var(--ns-shadow);
+}
+
+.dropdown-menu li a, .dropdown-menu li label {
+  background: var(--ns-surface-2);
+  color: var(--ns-text);
+  padding: 6px 14px;
+}
+
+.dropdown-menu li a:hover {
+  background: var(--ns-accent-strong);
+  color: #fff;
+}
+
+.ui-button,
+.button {
+  background: var(--ns-surface-2);
+  color: var(--ns-text);
+  border: 1px solid var(--ns-border-strong);
+  border-radius: var(--ns-radius-sm);
+}
+
+.tooltip {
+  color: var(--ns-text);
+  background: var(--ns-surface-sunken);
+  border: 1px solid var(--ns-border-strong);
+  border-radius: var(--ns-radius-sm);
+  box-shadow: var(--ns-shadow);
+  padding: 8px 10px;
+}
+
+#notification {
+  opacity: 0.95;
+}
+
+#notification a {
+  border-radius: var(--ns-radius-sm);
+  box-shadow: var(--ns-shadow);
+}
+
+/* ---------- Drawers ---------- */
+
+#drawer,
+#treatmentDrawer,
+#adminNotifiesDrawer,
+#boluscalcDrawer {
+  background-color: var(--ns-surface);
+  border-left: 1px solid var(--ns-border);
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.3);
+  color: var(--ns-text);
+}
+
+#drawer a, #treatmentDrawer a, #boluscalcDrawer a, #about a {
+  color: var(--ns-accent);
+}
+
+#drawer button, #treatmentDrawer button, #boluscalcDrawer button {
+  font-family: var(--ns-font);
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--ns-accent-strong);
+  border: none;
+  border-radius: var(--ns-radius-sm);
+  box-shadow: none;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+#drawer button:hover, #treatmentDrawer button:hover, #boluscalcDrawer button:hover {
+  filter: brightness(1.1);
+}
+
+fieldset {
+  border: 1px solid var(--ns-border-strong);
+  border-radius: var(--ns-radius-sm);
+}
+
+legend {
+  color: var(--ns-text);
+  font-weight: 600;
+  padding: 0 4px;
+}
+
+#drawer input[type=text], #drawer input[type=number], #drawer select,
+#treatmentDrawer input[type=text], #treatmentDrawer input[type=number],
+#treatmentDrawer input[type=date], #treatmentDrawer input[type=time],
+#treatmentDrawer select, #treatmentDrawer textarea,
+#boluscalcDrawer input[type=text], #boluscalcDrawer input[type=number],
+#boluscalcDrawer select {
+  font-family: var(--ns-font);
+  color: var(--ns-text);
+  background: var(--ns-surface-sunken);
+  border: 1px solid var(--ns-border-strong);
+  border-radius: 6px;
+  padding: 3px 6px;
+}
+
+#drawer input:focus, #drawer select:focus,
+#treatmentDrawer input:focus, #treatmentDrawer select:focus, #treatmentDrawer textarea:focus,
+#boluscalcDrawer input:focus, #boluscalcDrawer select:focus {
+  outline: none;
+  border-color: var(--ns-accent);
+}
+
+input[type=number]:invalid {
+  background-color: #5a2a2e;
+}
+
+.navigation a {
+  background-color: var(--ns-surface-2);
+  border-radius: var(--ns-radius-sm);
+  padding: 8px 10px;
+  transition: background-color 0.15s ease;
+}
+
+.navigation a:hover {
+  background-color: var(--ns-accent-strong);
+  color: #fff;
+}
+
+#boluscalcDrawer .insulincalculation {
+  background: var(--ns-surface-2);
+}
+
+#boluscalcDrawer .foodinput {
+  background: var(--ns-surface-sunken);
+  border-radius: var(--ns-radius-sm);
+}
+
+#boluscalcDrawer .border_bottom td {
+  border-bottom: 1px solid var(--ns-border-strong);
+}
+
+.authentication-status {
+  border-top: 1px solid var(--ns-border);
+}
