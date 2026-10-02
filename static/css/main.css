@@ -94,7 +94,7 @@ html, body {
 
 body {
   font-family: 'Ubuntu', sans-serif;
-  background: #000;
+  background: #2b2f36;
   color: #bdbdbd;
 }
 
@@ -160,7 +160,7 @@ a, a:visited, a:link {
 }
 
 .inrange .bgButton {
-  color: #4cff00;
+  color: #4fc3f7;
 }
 
 .bgStatus .bgSpan {
@@ -226,7 +226,7 @@ a, a:visited, a:link {
 .pill em {
   font-style: normal;
   font-weight: bold;
-  background: #000;
+  background: #1f2329;
   border-radius: 3px;
 }
 
@@ -299,7 +299,7 @@ a, a:visited, a:link {
   bottom: 0;
   height: auto;
   font-size: 20px;
-  background: #111;
+  background: #343a42;
   display: block;
   position: absolute;
   margin: 2px;
@@ -336,7 +336,7 @@ a, a:visited, a:link {
 
 .bgButton {
   margin: 10px;
-  border: 2px solid #000;
+  border: 2px solid #2b2f36;
   border-radius: 5px;
   display: inline-block;
   width: 360px;
@@ -355,7 +355,7 @@ a, a:visited, a:link {
 
 .pill.rawbg em {
   color: white;
-  background-color: black;
+  background-color: #1f2329;
   display: block;
   font-size: 20px;
   border-radius: 0;
@@ -435,7 +435,7 @@ a, a:visited, a:link {
   font-size: 18px;
   white-space: nowrap;
   border-radius: 5px;
-  border: 2px solid #000;
+  border: 2px solid #2b2f36;
   cursor: pointer;
 }
 

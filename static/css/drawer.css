@@ -311,7 +311,7 @@ h1, legend,
   color: #000;
 }
 #notification.success a {
-  background: #090;
+  background: #1e6fd9;
   color: #fff;
 }
 #notification.urgent a {
